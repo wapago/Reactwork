@@ -12,12 +12,20 @@ import Memo from "./Memo";
 import Ref from "./Ref";
 import Style from "./Style";
 import App3 from "./App3";
+import App4_redux from "./App4_redux";
+import {createStore} from "redux";
+import reducer from "./store";
+import {Provider} from "react-redux";
+
+const store = createStore(reducer);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <BrowserRouter>
-        <App3 />
-    </BrowserRouter>
+    // <BrowserRouter>
+    <Provider store={store}>
+        <App4_redux/>
+    </Provider>
+    // </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
